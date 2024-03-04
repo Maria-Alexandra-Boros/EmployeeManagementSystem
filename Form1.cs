@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EmployeeManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class loginScreen : Form
     {
-        public Form1()
+        public loginScreen()
         {
          InitializeComponent();
         }   
@@ -34,7 +34,7 @@ namespace EmployeeManagementSystem
 
         private void Xbutton_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -45,6 +45,23 @@ namespace EmployeeManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void login_signupBtn_Click(object sender, EventArgs e)
+        {
+            RegisterForm regForm = new RegisterForm();
+            regForm.Show();
+            this.Hide();
+        }
+
+        private void login_password_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void login_showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            login_password.PasswordChar = login_showPassword.Checked ? '\0' : '*';
         }
     }
 }
